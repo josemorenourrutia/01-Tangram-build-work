@@ -59,8 +59,13 @@ initScene(props)(({ scene, camera, renderer }) => {
 
   scene.add(tools.triangleRuler)
 
+  // const armLength = 10
   tools.compass = createCompass(tools.lengthCompass)
   tools.compass.visible = false;
+  // tools.compass.position.y = - 5 + 12;
+  // compas.position.z = 1;
+  // tools.compass.scale.set(-1, -1, 1)
+  // compas.rotateZ( Math.PI / 2 )
 
   scene.add(tools.compass)
 
@@ -282,6 +287,245 @@ initScene(props)(({ scene, camera, renderer }) => {
   scene.add(drawElements)
 
   console.log(drawElements.userData.A)
+  // const line1 = customLine([0, 0, 0, 0, 0, 0]);
+  // line1.position.y = -5;
+  // // let letterMesh = createLetterPlane("A", 1.);
+  // // letterMesh.position.y = -0.7;
+  // // letterMesh.visible = false;
+
+  // line1.add(letterMesh)
+  // letterMesh = createLetterPlane("B", 1.);
+  // letterMesh.position.x = 12
+  // letterMesh.position.y = -0.7;
+  // letterMesh.visible = false;
+  // line1.add(letterMesh)
+  // scene.add(line1);
+
+  // const line2 = customLine([0, 0, 0, 0, 0, 0]);
+  // line2.position.y = -5;
+  // letterMesh = createLetterPlane("C", 1.);
+  // letterMesh.position.x = 0
+  // letterMesh.position.y = 12.7
+  // letterMesh.visible = false;
+  // line2.add(letterMesh)
+  // scene.add(line2);
+
+  // // Paso 2
+  // esquadra.position.y = -5 + 0.5;
+  // esquadra.rotateZ(Math.PI / 2)
+  // cartabon.position.x = 7;
+  // cartabon.position.y = -5 - 15 * Math.sqrt(3) / 2 + 0.5 / 2;
+  // cartabon.rotateZ(Math.PI - Math.PI / 6)
+
+  // // Parámetros del arco
+  // const radius = 12;
+  // let centroY = -5, centroX = 0;
+  // let startAngle = 0;
+  // let endAngle = Math.PI * 0.5;
+  // // let startAngle = Math.PI / 20;
+  // // let endAngle = -startAngle;
+
+
+  // const maxPoints = Math.floor(Math.abs(endAngle - startAngle) * 100);
+  // let sign = 1;
+  // let angle1 = (endAngle - startAngle) / maxPoints;
+
+  // let ang = Math.acos(radius / armLength / 2)
+  // // compas.children[0].rotateZ( sign * ( Math.PI - 2 * ang ) )
+  // // compas.rotateZ( sign * ang + startAngle )
+  // compas.children[0].rotation.z = Math.PI;
+  // compas.children[0].rotateZ(sign * (Math.PI - 2 * ang))
+  // compas.rotation.z = Math.PI
+  // compas.rotateZ(sign * ang + startAngle)
+  // compas.position.y = centroY;
+  // const arc1 = customArcLine(maxPoints, 'black')
+  // scene.add(arc1.arcLine);
+  // const arc2 = customArcLine(maxPoints, 'black')
+  // scene.add(arc2.arcLine);
+  // const arc3 = customArcLine(maxPoints, 'black')
+  // scene.add(arc3.arcLine);
+
+  // Paso 3
+
+  // Parámetros del arco
+  // const radius = 12;
+  // centroY = -5 + 12;
+  // startAngle = Math.PI / 20;
+  // endAngle = -startAngle;
+
+  // // maxPoints = Math.floor( Math.abs( endAngle - startAngle ) * 100 );
+  // sign = -1;
+  // angle1 = ( endAngle - startAngle ) / maxPoints;
+
+  // ang = Math.acos( radius / armLength / 2 )
+  // compas.children[0].rotation.z = Math.PI;
+  // compas.children[0].rotateZ( sign * ( Math.PI - 2 * ang ) )
+  // compas.rotation.z = Math.PI
+  // compas.rotateZ( sign * ang + startAngle )
+  // // compas.children[0].rotateZ( sign * ( Math.PI - 2 * ang ) )
+  // // compas.rotateZ( sign * ang + startAngle )
+  // compas.position.y = centroY;
+  // // // const arc = customArcLine( maxPoints, 'black' )
+  // // // scene.add( arc.arcLine );
+
+  // // Paso 4
+  // const line3 = customLine([0, 0, 0, 0, 0, 0]);
+  // line3.position.y = -5;
+  // letterMesh = createLetterPlane("D", 1.);
+  // letterMesh.position.x = 12;
+  // letterMesh.position.y = 12.7;
+  // letterMesh.visible = false;
+  // line3.add(letterMesh)
+  // scene.add(line3);
+
+  // const line4 = customLine([0, 0, 0, 0, 0, 0]);
+  // line4.position.y = -5;
+  // // letterMesh = createLetterPlane( "D", 1. );
+  // // letterMesh.position.x = 12.5;
+  // // letterMesh.position.y = 12.5;
+  // // letterMesh.visible = false;
+  // // line4.add( letterMesh )
+  // scene.add(line4);
+
+  // let currentPoints = 0;
+  // let nLine = 0;
+  // function animate() {
+  //   requestAnimationFrame(animate);
+
+  //   const t = currentPoints / (maxPoints - 1);
+
+  //   if (nLine === 0) lineStepByStepArray(line1, [0, 0, 0, 12, 0, 0], t);
+  //   if (nLine === 1) lineStepByStepArray(line2, [0, 0, 0, 0, 12, 0], t);
+
+  //   if (currentPoints === maxPoints - 1 && nLine === 0) {
+  //     nLine = 1; currentPoints = 0;
+  //     line1.children[0].visible = true;
+  //     line1.children[1].visible = true;
+  //     ruler.visible = false;
+
+  //     esquadra.visible = true;
+  //     cartabon.visible = true;
+  //     return;
+  //   }
+  //   if (currentPoints === maxPoints - 1 && nLine === 1) {
+  //     nLine = 2; currentPoints = 0;
+  //     return;
+  //   }
+  //   // if ( currentPoints === maxPoints - 1 && nLine === 2 ) {
+  //   //   nLine = 3; currentPoints = 0;
+  //   //   return
+  //   // }
+  //   // if ( currentPoints > maxPoints ) return;
+
+  //   if (nLine === 2) {
+  //     esquadra.visible = false;
+  //     cartabon.visible = false;
+  //     line2.children[0].visible = true;
+
+  //     compas.visible = true;
+  //     compas.rotateZ(angle1);
+  //     arcStepByStep(arc1, currentPoints, centroX, centroY, radius, startAngle, endAngle, t);
+  //     // nLine = 3;
+  //   }
+  //   if (currentPoints === maxPoints - 1 && nLine === 2) {
+  //     nLine = 3; currentPoints = 0;
+  //     arc1.arcLine.visible = false;
+  //     centroY = -5 + 12;
+  //     startAngle = Math.PI / 20;
+  //     endAngle = -startAngle;
+
+  //     // maxPoints = Math.floor( Math.abs( endAngle - startAngle ) * 100 );
+  //     sign = -1;
+  //     angle1 = (endAngle - startAngle) / maxPoints;
+
+  // ang = Math.acos( radius / armLength / 2 )
+  //     compas.children[0].rotation.z = Math.PI;
+  //     compas.children[0].rotateZ(sign * (Math.PI - 2 * ang))
+  //     compas.rotation.z = Math.PI
+  //     compas.rotateZ(sign * ang + startAngle)
+  //     compas.position.y = centroY;
+  //     return
+  //   }
+  //   if (nLine === 3) {
+
+  //     compas.visible = true;
+  //     compas.rotateZ(angle1);
+  //     arcStepByStep(arc2, currentPoints, centroX, centroY, radius, startAngle, endAngle, t);
+  //   }
+
+  //   if (currentPoints === maxPoints - 1 && nLine === 3) {
+  //     nLine = 4; currentPoints = 0;
+  //     centroX = 12;
+  //     centroY = -5;
+  //     startAngle = Math.PI / 2 - Math.PI / 20;
+  //     endAngle = Math.PI / 2 + Math.PI / 20;
+
+  //     // maxPoints = Math.floor( Math.abs( endAngle - startAngle ) * 100 );
+  //     sign = 1;
+  //     angle1 = (endAngle - startAngle) / maxPoints;
+
+  //     // ang = Math.acos( radius / armLength / 2 )
+  //     compas.children[0].rotation.z = Math.PI;
+  //     compas.children[0].rotateZ(sign * (Math.PI - 2 * ang))
+  //     compas.rotation.z = Math.PI
+  //     compas.rotateZ(sign * ang + startAngle)
+  //     compas.position.x = centroX;
+  //     compas.position.y = centroY;
+  //     return
+  //   }
+  //   if (nLine === 4) {
+
+  //     compas.visible = true;
+  //     compas.rotateZ(angle1);
+  //     arcStepByStep(arc3, currentPoints, centroX, centroY, radius, startAngle, endAngle, t);
+  //   }
+  //   if (currentPoints === maxPoints - 1 && nLine === 4) {
+  //     nLine = 5; currentPoints = 0;
+  //     compas.visible = false;
+  //     ruler.visible = true;
+  //     ruler.position.y = -5 + 12;
+
+  //     return
+  //   }
+  //   if (nLine === 5) {
+
+  //     lineStepByStepArray(line3, [0, 12, 0, 12, 12, 0], t);
+  //   }
+  //   if (currentPoints === maxPoints - 1 && nLine === 5) {
+  //     nLine = 6; currentPoints = 0;
+  //     compas.visible = false;
+  //     ruler.visible = true;
+  //     ruler.rotation.z = Math.PI / 2;
+  //     ruler.position.x = 12.;
+  //     ruler.position.y = -5.;
+
+  //     return
+  //   }
+  //   if (nLine === 6) {
+
+  //     lineStepByStepArray(line4, [12, 0, 0, 12, 12, 0], t);
+  //   }
+
+  //   if (currentPoints === maxPoints - 1 && nLine === 6) {
+  //     line3.children[0].visible = true;
+  //     nLine = 7; currentPoints = 0;
+  //     compas.visible = false;
+  //     ruler.visible = true;
+  //     ruler.rotation.z = 0.;
+  //     ruler.position.y = 12.;
+
+  //     arc2.arcLine.visible = false;
+  //     arc3.arcLine.visible = false;
+  //     return
+  //   }
+  //   if (nLine === 7) {
+
+  //     // lineStepByStepArray( line4, [12, 0, 0, 12, 12, 0], t );
+  //   }
+
+  //   currentPoints++;
+  //   renderer.render(scene, camera);
+  // }
 
   const managerSteps = [
     (t) => {
