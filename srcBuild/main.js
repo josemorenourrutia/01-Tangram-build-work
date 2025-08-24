@@ -15,7 +15,7 @@ const props = {
 
 export const config = {
   sizeTangram: 12,
-  maxPoints: 128 / 4
+  maxPoints: 128 / 1
 }
 
 export const tools = {
